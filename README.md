@@ -46,7 +46,7 @@ Inside the modal, `q` or `<Esc>` closes it.
 
 ## Configuration
 
-`setup()` is optional — sensible defaults apply. All fields, with their defaults:
+`setup()` is optional; sensible defaults apply. All fields, with their defaults:
 
 ```lua
 require("matrix-modal").setup({

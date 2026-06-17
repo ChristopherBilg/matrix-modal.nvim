@@ -32,7 +32,7 @@ function M.check()
   if vim.uv and vim.uv.new_timer then
     h.ok("vim.uv.new_timer available")
   else
-    h.error("vim.uv.new_timer not available — the animation timer cannot run")
+    h.error("vim.uv.new_timer not available; the animation timer cannot run")
   end
 
   if vim.api.nvim_open_win and vim.api.nvim_buf_set_extmark then
@@ -47,7 +47,7 @@ function M.check()
   if vim.g.loaded_matrix_modal then
     h.ok("plugin/matrix-modal.lua has loaded")
   else
-    h.warn("plugin/matrix-modal.lua has not run — user commands will be unavailable")
+    h.warn("plugin/matrix-modal.lua has not run; user commands will be unavailable")
   end
 
   for _, cmd in ipairs(COMMANDS) do
@@ -88,11 +88,11 @@ function M.check()
   if setup_called then
     h.ok("setup() has been called")
   else
-    h.warn("setup() has not been called — highlights will not survive a :colorscheme switch")
+    h.warn("setup() has not been called; highlights will not survive a :colorscheme switch")
   end
 
   if type(mod.health_info) ~= "function" then
-    h.warn("health_info() unavailable — skipping config and highlight validation")
+    h.warn("health_info() unavailable; skipping config and highlight validation")
     return
   end
   local info = mod.health_info()
@@ -107,7 +107,7 @@ function M.check()
     local label = type(info.chars) == "string" and (" (" .. info.chars .. ")") or ""
     h.ok(("charset: %d glyphs%s"):format(info.charset_size, label))
   else
-    h.error("resolved charset is empty — there are no characters to render")
+    h.error("resolved charset is empty; there are no characters to render")
   end
 
   if is_num(info.density) and info.density >= 0 and info.density <= 1 then
@@ -161,7 +161,7 @@ function M.check()
   if fade_count > 0 then
     h.ok(("fade gradient: %d levels"):format(fade_count))
   else
-    h.warn("fade_colors is empty — the rain will have no trailing gradient")
+    h.warn("fade_colors is empty; the rain will have no trailing gradient")
   end
 
   -- Highlights ---------------------------------------------------------------

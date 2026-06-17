@@ -21,8 +21,8 @@ CONTENTS                                               *matrix-modal-contents*
 ==============================================================================
 1. Introduction                     *matrix-modal* *matrix-modal-introduction*
 
-matrix-modal renders a "digital rain" effect — bright falling characters
-with a fading trail — inside a centered floating window. It also provides a
+matrix-modal renders a "digital rain" effect (bright falling characters
+with a fading trail) inside a centered floating window. It also provides a
 decryption mode that scrambles, then locks arbitrary text into place out of
 the rain, optionally rendered as large block letters.
 
@@ -114,7 +114,7 @@ Inside the modal these normal-mode mappings are buffer-local:
                                                         *matrix-modal.setup()*
 matrix-modal.setup({opts})
 
-Configure the plugin. Optional — defaults apply if it is never called.
+Configure the plugin. Optional; defaults apply if it is never called.
 Calling it merges {opts} over the selected theme and the built-in defaults,
 resolves the active character set, defines the |matrix-modal-highlights|, and
 installs a |ColorScheme| autocommand so those highlights survive a

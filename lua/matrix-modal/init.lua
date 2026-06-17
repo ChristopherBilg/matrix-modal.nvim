@@ -87,10 +87,10 @@ local ns = vim.api.nvim_create_namespace("MatrixFade")
 ---@field theme? MatrixModalThemeName Named color/charset bundle (default "matrix").
 ---@field chars? MatrixModalCharsetName|string|string[] Charset: named preset, raw string, or array. Omit to use theme default.
 ---@field speed? integer Milliseconds between animation frames.
----@field density? number Probability per column per frame of spawning a stream (0.0–1.0).
+---@field density? number Probability per column per frame of spawning a stream (0.0-1.0).
 ---@field color? string Hex color override for the head of each stream.
----@field width? number Window width — fraction (< 1) or absolute cell count (>= 1).
----@field height? number Window height — fraction (< 1) or absolute cell count (>= 1).
+---@field width? number Window width: fraction (< 1) or absolute cell count (>= 1).
+---@field height? number Window height: fraction (< 1) or absolute cell count (>= 1).
 ---@field fade_colors? string[] Hex color overrides for trailing characters.
 ---@field reveal_duration? integer Milliseconds for a decrypted message to fully resolve. Default 2000.
 ---@field text_padding? integer Cells of rain-free margin around :MatrixSay text. Default 1; 0 disables.
@@ -212,10 +212,10 @@ end
 
 -- Builds the target overlay for a decryption animation.
 -- Returns:
---   target  — nested map y -> x -> char (the message, positioned and clipped)
---   unlocked — flat array of {x, y, ch} used for random locking
---   count   — total number of target cells
---   blank   — flat array of {x, y} cells: the message bounding box grown by
+--   target:   nested map y -> x -> char (the message, positioned and clipped)
+--   unlocked: flat array of {x, y, ch} used for random locking
+--   count:    total number of target cells
+--   blank:    flat array of {x, y} cells: the message bounding box grown by
 --             config.text_padding and clamped to the grid, kept rain-free
 local function build_target(text, grid_width, grid_height, block)
   -- In block mode the message is first rendered into a multi-line grid of
