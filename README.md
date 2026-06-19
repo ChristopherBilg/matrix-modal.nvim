@@ -1,4 +1,4 @@
-# matrix-modal
+# matrix-modal.nvim
 
 A Matrix "digital rain" effect in a floating window for Neovim, with an optional
 decryption animation that resolves arbitrary text out of the rain.
@@ -21,7 +21,7 @@ Local plugin (as used in this config) with [lazy.nvim](https://github.com/folke/
 
 ```lua
 {
-  "Christopherbilg/matrix-modal",
+  "Christopherbilg/matrix-modal.nvim",
   cmd = { "Matrix", "MatrixStop", "MatrixToggle", "MatrixSay" },
   opts = {
     theme = "matrix",

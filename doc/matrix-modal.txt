@@ -21,7 +21,7 @@ CONTENTS                                               *matrix-modal-contents*
 ==============================================================================
 1. Introduction                     *matrix-modal* *matrix-modal-introduction*
 
-matrix-modal renders a "digital rain" effect (bright falling characters
+matrix-modal.nvim renders a "digital rain" effect (bright falling characters
 with a fading trail) inside a centered floating window. It also provides a
 decryption mode that scrambles, then locks arbitrary text into place out of
 the rain, optionally rendered as large block letters.
@@ -54,7 +54,7 @@ report this.
 Install with your plugin manager of choice. With lazy.nvim
 (https://github.com/folke/lazy.nvim): >lua
     {
-      "Christopherbilg/matrix-modal",
+      "Christopherbilg/matrix-modal.nvim",
       cmd = { "Matrix", "MatrixStop", "MatrixToggle", "MatrixSay" },
       opts = {
         theme = "matrix",
